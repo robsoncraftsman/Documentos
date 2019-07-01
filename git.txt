@@ -1,0 +1,72 @@
+//Configurações básicas do Git
+git config --global user.name "Robson S. Rodrigues"
+
+git config --global user.email "robsoncraftsman@gmail.com"
+
+git config --global core.editor code
+
+//Mostra o valor de uma configuração
+git config user.name
+
+//Lista todas as configurações
+git config --list
+
+//Inicializa a pasta em questão para usar o Git
+git init
+
+//Verifica a situação do repositório
+git status
+
+//Adiciona um arquivo no Git
+//se ele for modificado, deve rodar o comando novamente para ele
+//ser atualizado no "staged"
+git add <nome_arquivo>
+
+//Commit da versão
+git commit -m "Mensagem dizendo o que foi alterado"
+
+//Commit incluindo arquivos pendentes
+git commit -am "Mensagem dizendo o que foi alterado"
+
+//Log das alterações
+git log
+git log --decorate
+gir log --author="Nome do autor"
+got log --graph
+git shortlog
+git shortlog -sn
+
+//Mostrar alterações realizadas em um commit
+git show <hash>
+
+//Mostrar alterações realizadas em desenvolvimento
+git diff
+git diff --name-only
+
+//Desfazer uma alteração antes do "staged"
+git checkout "nome_do_arquivo"
+
+//Desfazer uma alteração após o "staged"
+git reset HEAD "home_do_arquivo"
+
+//Excluir um commit (evitar usar em reposiórios remotos)
+//git reset --soft --mixed --hard <hash da versão para qual você quer voltar>
+git reset --soft <hash_alvo>
+
+//Linkando com um repositório remoto
+git remote add origin git@github.com:robsoncraftsman/javascriptMasterclass.git
+
+//Listando os repositórios remotos
+git remote
+git remote -v
+
+//Enviando os arquivos para o repositório remoto, linkando com a branch
+git push -u origin master
+
+//Enviando alterações 
+git push
+
+//Baixar um novo repositório na máquina
+git clone <url_repositório_remoto> <pasta_local>
+
+
