@@ -32,7 +32,7 @@ git commit -am "Mensagem dizendo o que foi alterado"
 git log
 git log --decorate
 gir log --author="Nome do autor"
-got log --graph
+git log --graph
 git shortlog
 git shortlog -sn
 
@@ -54,7 +54,10 @@ git reset HEAD "home_do_arquivo"
 git reset --soft <hash_alvo>
 
 //Linkando com um repositório remoto
-git remote add origin git@github.com:robsoncraftsman/javascriptMasterclass.git
+git remote add origin <endereco_repositorio_remoto>
+
+//Alterando a URL remota
+git remote set-url origin <endereco_repositorio_remoto>
 
 //Listando os repositórios remotos
 git remote
@@ -63,10 +66,38 @@ git remote -v
 //Enviando os arquivos para o repositório remoto, linkando com a branch
 git push -u origin master
 
-//Enviando alterações 
+//Enviando alterações (após feito o link com -u)
 git push
+
+//Pegando as alterações (após feito o link com -u)
+git pull
 
 //Baixar um novo repositório na máquina
 git clone <url_repositório_remoto> <pasta_local>
+
+//Criar um branch
+git branch <nome_branch>
+git checkout <nome_branch>
+
+//Ou
+git checkout -b <nome_branch>
+
+//Listar as branchs do projeto
+git branch
+
+//Alterar entre os branchs
+git checkout <nome_branch>
+
+//Excluir um branch
+git branch -D <nome_branch>
+
+//Fazer merge da branch para a master
+git checkout master
+git merge <nome_branch>
+
+//Ou
+git merge master <nome_branch>
+
+
 
 
