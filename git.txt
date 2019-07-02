@@ -53,6 +53,9 @@ git reset HEAD "home_do_arquivo"
 //git reset --soft --mixed --hard <hash da versão para qual você quer voltar>
 git reset --soft <hash_alvo>
 
+//Revertendo uma alterações sem perder o commit
+git revert <hash_alvo>
+
 //Linkando com um repositório remoto
 git remote add origin <endereco_repositorio_remoto>
 
@@ -91,12 +94,70 @@ git checkout <nome_branch>
 //Excluir um branch
 git branch -D <nome_branch>
 
+//Excluir uma branch remota
+git push origin --delete <nome_branch>
+
+//OU 
+git push origin :<nome_branch>
+
 //Fazer merge da branch para a master
 git checkout master
-git merge <nome_branch>
+git merge <nome_branch_origem>
 
 //Ou
-git merge master <nome_branch>
+git merge master <nome_branch_origem>
+
+//Fazer rebase da branch para a master
+git checkout master
+git rebase <nome_branch_origem>
+
+//Move a alterações em progresso (WIP) para uma área temporária 
+git stash
+
+//Restaura as alterações temporárias (para uma branch ou master)
+git stash apply
+
+//Lista as stashs criadas
+git stash list
+
+//Limpa as alterações temporárias
+git stash clear
+
+//Criar alias para comandos do Git
+git config --global alias.<alias_comando> <comando_git>
+
+//Lista tags/versões
+git tag
+
+//Procurar tags
+git tag -l "1.*"
+
+//Criar tags
+git tag -a 1.0.0 -m "Version 1.0.0"
+
+//Criar tag para um commit já existente
+git tag -a 1.0.0 -m "Version 1.0.0" <hash_do_commit>
+
+//Subir TODAS tags para o reposítório remoto
+git push origin --tags
+
+//Subir uma tag específica para o repositório remoto
+git push origin <nome_tag>
+
+//Apagar tag local
+git tag -d <nome_tag>
+
+//Apagar tag remota
+git push origin --delete <nome_tag>
+
+//Ou
+git push origin :<nome_tag>
+
+//Checkout de uma tag
+git checkout <nome_tag>
+
+//Criando uma branch de uma tag específica
+git checkout -b <nome_branch> <nome_tag>
 
 
 
