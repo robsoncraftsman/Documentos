@@ -3,7 +3,7 @@ git config --global user.name "Robson S. Rodrigues"
 
 git config --global user.email "robsoncraftsman@gmail.com"
 
-git config --global core.editor code
+git config --global core.editor gedit
 
 //Mostra o valor de uma configuração
 git config user.name
@@ -158,6 +158,9 @@ git checkout <nome_tag>
 
 //Criando uma branch de uma tag específica
 git checkout -b <nome_branch> <nome_tag>
+
+//Linkar uma branch local com um repositório remoto
+git branch --set-upstream-to=origin/master <branch_local>
 
 
 
