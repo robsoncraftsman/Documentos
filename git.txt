@@ -30,11 +30,17 @@ git commit -am "Mensagem dizendo o que foi alterado"
 
 //Log das alterações
 git log
+git log -3 (nro de commits que deverão aparecer no log)
 git log --decorate
-gir log --author="Nome do autor"
+git log --author="Nome do autor"
+git log --since="Jan 1 2018" (exclui a data passada como parâmetro)
+git log --until="Jan 1 2019" (exclui a data passada como parâmetro)
 git log --graph
+git log --pretty=oneline
+git log --pretty=oneline --graph --all
 git shortlog
 git shortlog -sn
+git reflog
 
 //Mostrar alterações realizadas em um commit
 git show <hash>
@@ -43,18 +49,18 @@ git show <hash>
 git diff
 git diff --name-only
 
-//Desfazer uma alteração antes do "staged"
+//Desfazer uma alteração e um arquivo antes do "staged"
 git checkout "nome_do_arquivo"
 
-//Desfazer uma alteração após o "staged"
+//Desfazer uma alteração em um arquivo após o "staged"
 git reset HEAD "home_do_arquivo"
 
-//Excluir um commit (evitar usar em reposiórios remotos)
-//git reset --soft --mixed --hard <hash da versão para qual você quer voltar>
-git reset --soft <hash_alvo>
-
-//Revertendo uma alterações sem perder o commit
+//Revertendo alterações sem perder o commit (gera um novo commit com o revert)
 git revert <hash_alvo>
+
+//Revertendo alterações apagando os commits subsequentes (usar apenas em branches)
+//git reset --soft|--mixed|--hard <hash da versão para qual você quer voltar>
+git reset --soft <hash_alvo>
 
 //Linkando com um repositório remoto
 git remote add origin <endereco_repositorio_remoto>
@@ -106,6 +112,9 @@ git merge <nome_branch_origem>
 
 //Ou
 git merge master <nome_branch_origem>
+
+//Após resolver conflitos
+git merge --continue
 
 //Fazer rebase da branch para a master
 git checkout master
@@ -161,6 +170,21 @@ git checkout -b <nome_branch> <nome_tag>
 
 //Linkar uma branch local com um repositório remoto
 git branch --set-upstream-to=origin/master <branch_local>
+	
+//Pega commit de outra branch e copia para master
+git cherry-pick <hash_do_commit>
+	
+//Comitar trechos especificos de um arquivo
+git add -p
+
+//Corrigir um commit, mantendo o histórico
+git commit --fixup <hash_do_commit>
+
+//Mesclar commits de forma interativa (fixup, squash - usar apenas em branches)
+git rebase -i HEAD~2
+
+//Gerar zip do repositório local
+git archive master --format=zip --output=file.zip
 
 
 
