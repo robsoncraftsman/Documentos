@@ -48,6 +48,7 @@ git show <hash>
 //Mostrar alterações realizadas em desenvolvimento
 git diff
 git diff --name-only
+git diff master <nome_arquivo>
 
 //Desfazer uma alteração e um arquivo antes do "staged"
 git checkout "nome_do_arquivo"
@@ -72,14 +73,14 @@ git remote set-url origin <endereco_repositorio_remoto>
 git remote
 git remote -v
 
-//Enviando os arquivos para o repositório remoto, linkando com a branch
-git push -u origin master
-
 //Enviando alterações (após feito o link com -u)
-git push
+git push origin master
 
 //Pegando as alterações (após feito o link com -u)
-git pull
+git pull origin master
+
+//Pegando as alterações e fazendo rebase qdo houver alterações no Github
+git pull origin master --rebase
 
 //Baixar um novo repositório na máquina
 git clone <url_repositório_remoto> <pasta_local>
@@ -120,7 +121,8 @@ git merge --continue
 git checkout master
 git rebase <nome_branch_origem>
 
-//Move a alterações em progresso (WIP) para uma área temporária 
+//Move a alterações em progresso (WIP) para uma área temporária
+//É possível fazer um stash numa branch e depois fazer o apply na master 
 git stash
 
 //Restaura as alterações temporárias (para uma branch ou master)
@@ -186,6 +188,6 @@ git rebase -i HEAD~2
 //Gerar zip do repositório local
 git archive master --format=zip --output=file.zip
 
-
-
+//Referenciar issues do Github no commit do git
+https://help.github.com/en/articles/closing-issues-using-keywords
 
