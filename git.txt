@@ -191,3 +191,9 @@ git archive master --format=zip --output=file.zip
 //Referenciar issues do Github no commit do git
 https://help.github.com/en/articles/closing-issues-using-keywords
 
+//Material para utilização do GitFlow
+https://danielkummer.github.io/git-flow-cheatsheet
+
+//Instalar o GitFlow
+sudo apt-get install git-flow
+
