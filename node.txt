@@ -1,0 +1,32 @@
+//Instalar Express
+npm install -g express-generator
+
+//Criar projeto novo Express
+express --view=ejs --git teste-web
+
+//Rodar aplicação node 
+DEBUG=teste-web:* npm start
+
+//Instalar dependência local e salvá-la no package.json
+npm i --save <dependência>
+
+//Instalar dependência apenas em tempo de desenvolvimento
+npm i --save-dev <dependência>
+
+//Re-instalar pasta node_modules baseado no arquivo package.json
+npm i
+
+//Ferramenta para monitorar e re-executar arquivos alterados
+nodemon
+
+//Rodar scripts definidos no package.json
+npm run <id_script>
+
+//Rodar scripts padrão do package.json
+npm start|test|..
+
+//Instalar servidor HTTP para testar páginas estáticas
+npm i -g http-server
+
+//Rodar servidor na pasta local
+http-server .
