@@ -1,0 +1,32 @@
+//Porta padrão
+27017
+
+//Abrir cliente do mongo
+> mongo
+
+//Visualizar os bancos existentes
+> show databases
+
+//Usar um banco de dados específico
+> use <nome_banco>
+
+//Mostrar as coleções existentes
+> show collections
+
+//Retornar os dados de uma coleção
+> db.customers.find()
+> db.customers.find().pretty()
+> db.customers.find({uf: "SC"})
+
+//Inserir dados em uma coleção
+> db.customers.insert({ nome: "João", idade: 30 })
+
+//Editar dados em uma coleção (substitui o registro inteiro)
+> db.customers.update{_id: ObjectId("59ab46e433959e2724be2cbd")}, {nome: "Mário", idade: 40, uf: "SC"})
+
+//Editar dados PONTUAIS em uma coleção
+> db.customers.updateOne({_id: ObjectId("59ab46e433959e2724be2cbd")}, {$set: {idade: 28}})
+
+//Excluir um registro de uma coleção
+> db.customers.deleteOne({_id: ObjectId("59ab46e433959e2724be2cbd")})
+
