@@ -1,0 +1,7 @@
+sudo apt-get install python3 pip
+pip install --user --upgrade pip
+source ~/.profile
+pip3 install flake8
+pip3 install autopep8
+
+
