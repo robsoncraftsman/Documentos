@@ -28,5 +28,5 @@ npm start|test|..
 //Instalar servidor HTTP para testar páginas estáticas
 npm i -g http-server
 
-//Rodar servidor na pasta local
-http-server .
+//Rodar servidor na pasta local (sem cache)
+http-server -c-1 .
