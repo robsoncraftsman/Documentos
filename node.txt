@@ -1,20 +1,38 @@
-//Instalar Express
+//Atualizar node para ultima versão
+nvm install stable
+
+//Listar versões locais node
+nvm ls
+
+//Verificar versão atual do node
+node -v
+
+//Pacotes
+npm install -g http-server
 npm install -g express-generator
+npm install -g nodemon
+
+//Dependências projeto
+npm install mongodb --save
+npm install dotenv --save
 
 //Criar projeto novo Express
-express --view=ejs --git teste-web
+express --view=ejs --git <nome_do_projeto/pasta>
+
+//Inicializar o node na pasta do projeto
+npm install
 
 //Rodar aplicação node 
 DEBUG=teste-web:* npm start
 
 //Instalar dependência local e salvá-la no package.json
-npm i --save <dependência>
+npm install --save <dependência>
 
 //Instalar dependência apenas em tempo de desenvolvimento
-npm i --save-dev <dependência>
+npm install --save-dev <dependência>
 
 //Re-instalar pasta node_modules baseado no arquivo package.json
-npm i
+npm install
 
 //Ferramenta para monitorar e re-executar arquivos alterados
 nodemon
