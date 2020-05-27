@@ -73,11 +73,14 @@ git remote set-url origin <endereco_repositorio_remoto>
 git remote
 git remote -v
 
+//Enviando alterações para repositório remoto e linkando para futuros comamdos
+git push -u origin master
+
 //Enviando alterações (após feito o link com -u)
-git push origin master
+git push
 
 //Pegando as alterações (após feito o link com -u)
-git pull origin master
+git pull
 
 //Pegando as alterações e fazendo rebase qdo houver alterações no Github
 git pull origin master --rebase
