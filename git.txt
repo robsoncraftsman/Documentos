@@ -22,6 +22,9 @@ git status
 //ser atualizado no "staged"
 git add <nome_arquivo>
 
+//Mudar nome de uma pasta
+git mv <old name> <new name>
+
 //Commit da versão
 git commit -m "Mensagem dizendo o que foi alterado"
 
