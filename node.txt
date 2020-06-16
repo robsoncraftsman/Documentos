@@ -13,8 +13,16 @@ npm install -g express-generator
 npm install -g nodemon
 
 //Dependências projeto
+npm insatll express --save
 npm install mongodb --save
-npm install dotenv --save
+npm install helmet --save
+npm insatll morgan --save
+npm install dotenv-safe --save
+npm install jsonwebtoken --save
+npm install @hapi/joi --save
+npm install blue-tape --save-dev
+npm install tap-spec --save-dev
+npm install supertest --save-dev
 
 //Criar projeto novo Express
 express --view=ejs --git <nome_do_projeto/pasta>
@@ -35,7 +43,7 @@ npm install --save-dev <dependência>
 npm install
 
 //Ferramenta para monitorar e re-executar arquivos alterados
-nodemon
+npm install -g nodemon
 
 //Rodar scripts definidos no package.json
 npm run <id_script>
@@ -48,3 +56,16 @@ npm i -g http-server
 
 //Rodar servidor na pasta local (sem cache)
 http-server -c-1 .
+
+//Instalar PM2:
+npm install pm2 -g
+
+//Rodar PM2
+pm2 start ./bin/www --name myApp
+
+//Comandos adicionais
+pm2 ls: para listar os processos existentes;
+pm2 restart myApp: para reiniciar o processo myApp;
+pm2 stop myApp: para derrubar o processo myApp;
+pm2 delete myApp: para excluir o processo myApp;
+pm2 logs –lines 100: para exibir as últimas 100 linhas de logs dos processos;
