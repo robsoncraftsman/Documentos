@@ -188,6 +188,13 @@ git add -p
 //Corrigir um commit, mantendo o histórico
 git commit --fixup <hash_do_commit>
 
+//Corrigir último commit (arquivos ou mensagem)
+//(IMPORTANTE: Se tiver alterações staged, substitui as alterações também)
+git commit --amend -m "Message"
+
+//Excluir o último commit, mantendo as alterações locais
+git reset HEAD^
+
 //Mesclar commits de forma interativa (fixup, squash - usar apenas em branches)
 git rebase -i HEAD~2
 
