@@ -3,7 +3,15 @@ git config --global user.name "Robson S. Rodrigues"
 
 git config --global user.email "robsoncraftsman@gmail.com"
 
-git config --global core.editor gedit
+git config --global core.editor code --wait
+
+//Criar alias para os comandos
+git config --global --edit
+> Criar uma sessão [alias]
+> Usar o formato alias = !<cmd git>
+> Ex: l = !git log
+> Ex: s = !git status -s
+> Ex: c = !git add . && git commit -m 
 
 //Mostra o valor de uma configuração
 git config user.name
@@ -44,6 +52,7 @@ git log --pretty=oneline --graph --all
 git shortlog
 git shortlog -sn
 git reflog
+git log --pretty=format:'%C(yellow)%h %d%C(cyan)- %cn - %cr - %C(green)%s'
 
 //Mostrar alterações realizadas em um commit
 git show <hash>

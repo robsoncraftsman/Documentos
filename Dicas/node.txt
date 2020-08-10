@@ -7,22 +7,75 @@ nvm ls
 //Verificar versão atual do node
 node -v
 
-//Pacotes
+//Instalar dependência local e salvá-la no package.json
+npm install --save <dependência>
+
+//Instalar dependência apenas em tempo de desenvolvimento
+npm install --save-dev <dependência>
+
+//Pacotes globais
 npm install -g http-server
 npm install -g express-generator
 npm install -g nodemon
 
 //Dependências projeto
-npm insatll express --save
-npm install mongodb --save
-npm install helmet --save
-npm insatll morgan --save
-npm install dotenv-safe --save
-npm install jsonwebtoken --save
-npm install @hapi/joi --save
-npm install blue-tape --save-dev
-npm install tap-spec --save-dev
-npm install supertest --save-dev
+npm insatll express
+npm install mongodb
+npm install helmet
+npm insatll morgan
+npm install jsonwebtoken
+npm install bcrypt
+npm install dotenv-safe
+npm install @hapi/joi
+npm install @hapi/hapi
+npm install @hapi/boom
+npm install @hapi/vision @hapi/inert hapi-swagger
+npm install hapi-auth-jwt2
+
+//Testes
+npm install --save-dev blue-tape
+npm install --save-dev tap-spec
+
+//Coverage
+npm install --save-dev nyc
+
+//Testar apis
+npm install --save-dev supertest
+
+//Outra opção testes
+npm install --save-dev mocha
+
+//Mock de requisições http
+npm install --save-dev nock
+
+//Trabalhar com linha de comando
+npm install commander
+
+//Manipular variáveis de ambiente
+npm install --save-dev cross-env
+
+//Verificador de formato da mensagem do commit
+//Conforme padrão: https://www.conventionalcommits.org/
+npm install --save-dev git-commit-msg-linter
+
+//TypeScript
+npm install --save-dev typescript @types/node
+
+//ESLint para TypeScript + Prettier
+npm install --save-dev eslint eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node @typescript-eslint/eslint-plugin eslint-config-standard-with-typescript eslint-config-prettier
+
+//Ferramenta para fazer validações antes de ações do Git
+npm install --save-dev husky
+npm install --save-dev lint-staged
+
+//Testes com Jest e TS
+npm install --save-dev jest @types/jest ts-jest
+
+//Dicas Jest
+jest --clearCache
+
+//Atualizar versões das bibliotecas do projeto
+npm install npm-check -g
 
 //Criar projeto novo Express
 express --view=ejs --git <nome_do_projeto/pasta>
@@ -30,14 +83,8 @@ express --view=ejs --git <nome_do_projeto/pasta>
 //Inicializar o node na pasta do projeto
 npm install
 
-//Rodar aplicação node 
+//Rodar aplicação node em modo debug
 DEBUG=teste-web:* npm start
-
-//Instalar dependência local e salvá-la no package.json
-npm install --save <dependência>
-
-//Instalar dependência apenas em tempo de desenvolvimento
-npm install --save-dev <dependência>
 
 //Re-instalar pasta node_modules baseado no arquivo package.json
 npm install
