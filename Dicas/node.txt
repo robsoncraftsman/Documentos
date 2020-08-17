@@ -58,30 +58,30 @@ npm install --save-dev cross-env
 //Conforme padrão: https://www.conventionalcommits.org/
 npm install --save-dev git-commit-msg-linter
 
-//TypeScript
-npm install --save-dev typescript @types/node
-
-//ESLint para TypeScript + Prettier
-npm install --save-dev eslint eslint-plugin-standard eslint-plugin-promise eslint-plugin-import eslint-plugin-node @typescript-eslint/eslint-plugin eslint-config-standard-with-typescript eslint-config-prettier
-
 //Ferramenta para fazer validações antes de ações do Git
-npm install --save-dev husky
-npm install --save-dev lint-staged
+npm install --save-dev husky lint-staged
 
 //Testes com Jest e TS
 npm install --save-dev jest @types/jest ts-jest
 
+//Validação de e-mail/strings
+npm install validator
+npm intsall --save-dev @types/validator
+
 //Dicas Jest
-jest --clearCache
+npx jest --clearCache
 
 //Atualizar versões das bibliotecas do projeto
-npm install npm-check -g
+npm install -g npm-check
 
 //Criar projeto novo Express
 express --view=ejs --git <nome_do_projeto/pasta>
 
 //Inicializar o node na pasta do projeto
-npm install
+npm init -y
+
+//Listas todos pacotes instalados globalmente
+npm list -g --depth=0
 
 //Rodar aplicação node em modo debug
 DEBUG=teste-web:* npm start
@@ -90,7 +90,8 @@ DEBUG=teste-web:* npm start
 npm install
 
 //Ferramenta para monitorar e re-executar arquivos alterados
-npm install -g nodemon
+npm install --save-dev nodemon
+npx nodemon
 
 //Rodar scripts definidos no package.json
 npm run <id_script>
@@ -99,10 +100,16 @@ npm run <id_script>
 npm start|test|..
 
 //Instalar servidor HTTP para testar páginas estáticas
-npm i -g http-server
+npm install --save-dev http-server
 
 //Rodar servidor na pasta local (sem cache)
-http-server -c-1 .
+npx http-server -c-1 .
+
+//Outra opção para visualizar paginas estáticas
+npm install --save-dev live-server
+npx live-server
+
+
 
 //Instalar PM2:
 npm install pm2 -g

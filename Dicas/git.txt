@@ -9,9 +9,10 @@ git config --global core.editor code --wait
 git config --global --edit
 > Criar uma sessão [alias]
 > Usar o formato alias = !<cmd git>
-> Ex: l = !git log
-> Ex: s = !git status -s
-> Ex: c = !git add . && git commit -m 
+l = !git log --pretty=format:'%C(yellow)%h%d %C(cyan)- %cn - %cr - %C(green)%s'   
+s = !git status -b -s
+a = !git add .
+c = !git commit -m
 
 //Mostra o valor de uma configuração
 git config user.name
