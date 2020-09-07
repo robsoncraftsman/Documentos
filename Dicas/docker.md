@@ -12,9 +12,11 @@ https://docs.docker.com/engine/install/ubuntu/
 
 `docker image ls`
 
-- Baixar uma imagem do repositório:
+- Baixar/atualizar uma imagem do repositório (DockerHub):
 
-*Importante:Definir a versão da imagem. Por padrão é baixada o latest. Mas isso pode gerar problemas de compatibilidade/segurança no futuro*
+*Importante(1):Definir a versão da imagem. Por padrão é baixada o latest. Mas isso pode gerar problemas de compatibilidade/segurança no futuro*
+*Importante(2):Caso a imagem esteja desatualizada, uma nova versão da imagem será baixada (no caso de usar apenas os primeiros dígitos da versão ou a tag latest)*
+*Importante(3):Os containers criados com versões antigas das imagens precisam ser recriados para usar a nova versão da imagem*
 
 `docker image pull {image_name}:{image_version}`
 
@@ -141,6 +143,35 @@ Modo padrão do Docker é "Bridge".
 
 `docker run --net {none|bridge|host} {params}`
 
+### Docker Compose
+
+Entrar na pasta do projeto (onde está o arquivo docker-compose.yml)
+
+- Para construir e rodar um projeto:
+
+`docker-compose up`
+
+- Para construir e rodar um projeto em backgroud:
+
+`docker-compose up -d`
+
+- Para listar os conteiners rodando:
+
+`docker-compose ls`
+
+- Para parar todos os containers do projeto:
+
+`docker-compose down`
+
+- Para ver os logs do projeto:
+
+`docker-compose logs`
+
+- Para criar várias instâncias de um container:
+
+ `docker-compose up -d --scale {service}={num_instances}`
+
+
 ## Exemplos
 
 ### POSTGRES
@@ -150,10 +181,10 @@ docker run \
  --name postgres \
  -e POSTGRES_USER=admin \
  -e POSTGRES_PASSWORD=pwd \
- -e POSTGRES_DB=herois \
+ -e POSTGRES_DB=db \
  -p 5432:5432 \
  -d \
- postgres
+ postgres:12.4
 ```
 ```
 docker run \
@@ -163,6 +194,15 @@ docker run \
  -d \
  adminer
 ```
+
+- Acessar o PSQL dentro da imagem:
+
+`docker exec {container} psql -U admin -d db`
+
+- Rodar comandos dentro do database:
+
+`docker exec {container} psql -U admin -d db -c 'select * from ...'`
+
 
 ### MONGODB
 
