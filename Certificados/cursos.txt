@@ -5,4 +5,5 @@
 06/08/2020 - Imersão em desenvolvimento de APIs com Node.js by #NodeBR - Erick Wendel - 16 Horas
 24/08/2020 - Entendendo TypeScript - Udemy - Cod3r - 11 Horas
 31/08/2020 - Fundamentos de Arquitetura de Software - desenvolvedor.io - Eduardo Pires - 13 Horas 
+07/09/2020 - Docker: Ferramenta essencial para Desenvolvedores - Udemy - Cod3r - 5,5 Horas
 
