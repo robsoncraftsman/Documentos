@@ -1,9 +1,21 @@
 //Configurações básicas do Git
+
 git config --global user.name "Robson S. Rodrigues"
 
 git config --global user.email "robsoncraftsman@gmail.com"
 
 git config --global core.editor code --wait
+
+//Geração do certifiado SSH para acessar o GitHub
+//https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
+
+ls -al ~/.ssh
+ssh-keygen -t rsa -b 4096 -C "robsoncraftsman@gmail.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+sudo apt-get install xclip
+#Ir até "https://github.com/settings/keys" e colar a chave SSH no GitHub
+ssh -T git@github.com
 
 //Criar alias para os comandos
 git config --global --edit
