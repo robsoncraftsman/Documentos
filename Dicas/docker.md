@@ -213,7 +213,7 @@ docker run \
  -e MONGO_INITDB_ROOT_USERNAME=admin \
  -e MONGO_INITDB_ROOT_PASSWORD=pwd \
  -d \
- mongo:4
+ mongo:4.4.1
 ```
 ```
 docker run \
