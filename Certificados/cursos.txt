@@ -7,4 +7,5 @@
 31/08/2020 - Fundamentos de Arquitetura de Software - desenvolvedor.io - Eduardo Pires - 13 Horas 
 07/09/2020 - Docker: Ferramenta essencial para Desenvolvedores - Udemy - Cod3r - 5,5 Horas
 30/09/2020 - Java 8: Tire proveito dos novos recursos da linguagem - Alura - 12 Horas
+05/10/2020 - Novidades do Java: Produtividade com Novos Recursos - Alura - 8 Horas
 
