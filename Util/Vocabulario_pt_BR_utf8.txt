@@ -6,6 +6,8 @@
 maven
 plugin
 verbosidade
+var
+src
 
 # Palavras originais
 AC
