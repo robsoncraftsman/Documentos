@@ -6,6 +6,8 @@ git config --global user.email "robsoncraftsman@gmail.com"
 
 git config --global core.editor code --wait
 
+git config --global init.defaultBranch main
+
 //Geração do certifiado SSH para acessar o GitHub
 //https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh
 
@@ -23,7 +25,7 @@ git config --global --edit
 > Usar o formato alias = !<cmd git>
 l = !git log --pretty=format:'%C(yellow)%h%d %C(cyan)- %cn - %cr - %C(green)%s'   
 s = !git status -b -s
-a = !git add .
+a = !git add . && git s
 c = !git commit -m
 
 //Mostra o valor de uma configuração
