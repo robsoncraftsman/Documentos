@@ -8,6 +8,8 @@ plugin
 verbosidade
 var
 src
+Rodrigo
+Alura
 
 # Palavras originais
 AC
