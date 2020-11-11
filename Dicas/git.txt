@@ -19,14 +19,16 @@ sudo apt-get install xclip
 #Ir até "https://github.com/settings/keys" e colar a chave SSH no GitHub
 ssh -T git@github.com
 
-//Criar alias para os comandos
-git config --global --edit
-> Criar uma sessão [alias]
-> Usar o formato alias = !<cmd git>
-l = !git log --pretty=format:'%C(yellow)%h%d %C(cyan)- %cn - %cr - %C(green)%s'   
+//Outras configurações globais (atalhos, push apenas de tags anotadas)
+> git config --global --edit
+
+[push]
+followTags = true
+[alias]
+la = !git --no-pager log  --pretty=format:'%C(yellow)%h%d %C(cyan)- %cn - %cr - %C(green)%s'
+l = !git la -n 5
 s = !git status -b -s
 a = !git add . && git s
-c = !git commit -m
 
 //Mostra o valor de uma configuração
 git config user.name
@@ -173,7 +175,10 @@ git tag
 //Procurar tags
 git tag -l "1.*"
 
-//Criar tags
+//Criar tag lightweight (não enviar para o servidor)
+git tag 1.0.0
+
+//Criar tag anotada (para ser enviada para o servidor)
 git tag -a 1.0.0 -m "Version 1.0.0"
 
 //Criar tag para um commit já existente
@@ -181,6 +186,9 @@ git tag -a 1.0.0 -m "Version 1.0.0" <hash_do_commit>
 
 //Subir TODAS tags para o reposítório remoto
 git push origin --tags
+
+//Subir apenas as tags anotadas (melhor opção)
+git push origin --follow-tags
 
 //Subir uma tag específica para o repositório remoto
 git push origin <nome_tag>

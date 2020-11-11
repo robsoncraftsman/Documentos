@@ -21,6 +21,34 @@ settings.json:
 {
     "terminal.integrated.shell.linux": "/bin/zsh",
     "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontSize": 13,
     "editor.fontFamily": "Hack",
-    "editor.fontSize": 15
+    "editor.fontSize": 14,
+    "Beautify active file": false,
+    "Navigate forward": false,
+    "Open files list": false,
+    "Save all": true,
+    "Toggle terminal": false,
+    "Navigate back": false,
+    "window.zoomLevel": 1,
+    "editor.formatOnSave": true,
 }
+
+Plugins:
+- Bracket Pair Colorizer 2
+- Color Highlight
+- Debugger for Chrome
+- Docker
+- ESLint
+- GitHub Pull Requests and Issues
+- GitLens
+- JavaScript (ES6) code snippets
+- Live Server
+- npm
+- npm Intellisense
+- Prettier
+- Remote - Containers
+- TEST Client
+- Shortcut Menu Bar
+- StandardJS
+- vscode-icons
