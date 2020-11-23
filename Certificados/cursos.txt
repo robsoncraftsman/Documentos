@@ -1,5 +1,5 @@
+23/11/2020 - Scrum: Agilidade em seu projeto - Alura - 10 Horas
 13/11/2020 - Spring Boot API REST: Construa uma API - Alura - 8 Horas
----
 23/10/2020 - Java e Clean Architecture: Descomplicando Arquitetura de Software - Alura - 10 Horas
 13/10/2020 - Java e Testes: Test Driven Development com JUnit - Alura - 12 Horas
 05/10/2020 - Novidades do Java: Produtividade com Novos Recursos - Alura - 8 Horas
