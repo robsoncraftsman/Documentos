@@ -29,6 +29,7 @@ la = !git --no-pager log  --pretty=format:'%C(yellow)%h%d %C(cyan)- %cn - %cr - 
 l = !git la -n 5
 s = !git status -b -s
 a = !git add . && git s
+c = !git add . && git commit -m
 
 //Mostra o valor de uma configuração
 git config user.name
@@ -77,7 +78,7 @@ git show <hash>
 //Mostrar alterações realizadas em desenvolvimento
 git diff
 git diff --name-only
-git diff master <nome_arquivo>
+git diff main <nome_arquivo>
 
 //Desfazer uma alteração e um arquivo antes do "staged"
 git checkout "nome_do_arquivo"
@@ -103,7 +104,7 @@ git remote
 git remote -v
 
 //Enviando alterações para repositório remoto e linkando para futuros comamdos
-git push -u origin master
+git push -u origin main
 
 //Enviando alterações (após feito o link com -u)
 git push
@@ -112,7 +113,7 @@ git push
 git pull
 
 //Pegando as alterações e fazendo rebase qdo houver alterações no Github
-git pull origin master --rebase
+git pull origin main --rebase
 
 //Baixar um novo repositório na máquina
 git clone <url_repositório_remoto> <pasta_local>
@@ -139,25 +140,25 @@ git push origin --delete <nome_branch>
 //OU 
 git push origin :<nome_branch>
 
-//Fazer merge da branch para a master
-git checkout master
+//Fazer merge da branch para a main
+git checkout main
 git merge <nome_branch_origem>
 
 //Ou
-git merge master <nome_branch_origem>
+git merge main <nome_branch_origem>
 
 //Após resolver conflitos
 git merge --continue
 
-//Fazer rebase da branch para a master
-git checkout master
+//Fazer rebase da branch para a main
+git checkout main
 git rebase <nome_branch_origem>
 
 //Move a alterações em progresso (WIP) para uma área temporária
-//É possível fazer um stash numa branch e depois fazer o apply na master 
+//É possível fazer um stash numa branch e depois fazer o apply na main 
 git stash
 
-//Restaura as alterações temporárias (para uma branch ou master)
+//Restaura as alterações temporárias (para uma branch ou main)
 git stash apply
 
 //Lista as stashs criadas
@@ -209,9 +210,9 @@ git checkout <nome_tag>
 git checkout -b <nome_branch> <nome_tag>
 
 //Linkar uma branch local com um repositório remoto
-git branch --set-upstream-to=origin/master <branch_local>
+git branch --set-upstream-to=origin/main <branch_local>
 	
-//Pega commit de outra branch e copia para master
+//Pega commit de outra branch e copia para main
 git cherry-pick <hash_do_commit>
 	
 //Comitar trechos especificos de um arquivo
@@ -231,7 +232,7 @@ git reset HEAD^
 git rebase -i HEAD~2
 
 //Gerar zip do repositório local
-git archive master --format=zip --output=file.zip
+git archive main --format=zip --output=file.zip
 
 //Referenciar issues do Github no commit do git
 https://help.github.com/en/articles/closing-issues-using-keywords

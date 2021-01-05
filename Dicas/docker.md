@@ -197,11 +197,11 @@ docker run \
 
 - Acessar o PSQL dentro da imagem:
 
-`docker exec {container} psql -U admin -d db`
+`docker exec {container_name|id} psql -U admin -d db`
 
 - Rodar comandos dentro do database:
 
-`docker exec {container} psql -U admin -d db -c 'select * from ...'`
+`docker exec {container_name|id} psql -U admin -d db -c 'select * from ...'`
 
 
 ### MONGODB
@@ -227,4 +227,22 @@ docker run \
 docker exec -it mongodb \
  mongo --host localhost --port 27017 -u admin -p pwd --authenticationDatabase admin \
  --eval "db.getSiblingDB('herois').createUser({user: 'user', pwd: 'pwd', roles: [{role: 'readWrite', db: 'herois'}]})"
+```
+
+### MySQL
+
+- Criar um container do MySQL
+
+```
+docker container run --name {container_name} -p 3306:3306 -e MYSQL_ROOT_PASSWORD=rootpassword -e MYSQL_DATABASE={database_name} -e MYSQL_USER=user -e MYSQL_PASSWORD=password -d mysql:8.0.22
+```
+
+- Acessar o client do MySQL
+
+```
+# docker exec -it {container_name|id} bash
+# mysql -uroot -p
+```
+
+```
 ```
