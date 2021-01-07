@@ -29,7 +29,8 @@ la = !git --no-pager log  --pretty=format:'%C(yellow)%h%d %C(cyan)- %cn - %cr - 
 l = !git la -n 5
 s = !git status -b -s
 a = !git add . && git s
-c = !git add . && git commit -m
+c = !git commit -m
+ac = !git add . && git commit -m
 
 //Mostra o valor de uma configuração
 git config user.name

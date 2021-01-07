@@ -244,5 +244,22 @@ docker container run --name {container_name} -p 3306:3306 -e MYSQL_ROOT_PASSWORD
 # mysql -uroot -p
 ```
 
+
+### SQL Server
+
+- Criar um container SQLServer
+
 ```
+docker run \
+ --name sqlserver \
+ -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Str0ngP@ssword' \
+ -p 1433:1433 \
+ -d \
+ mcr.microsoft.com/mssql/server:2017-latest-ubuntu 
+```
+
+- Acessar o client do SQLServer
+
+```
+docker exec -it sqlserver /opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Str0ngP@ssword
 ```
