@@ -1,3 +1,4 @@
+07/01/2021 - Solid com Java: Princípios da Programação Orientada a Objetos - Alura - 8 Horas
 05/01/2021 - Spring Boot API REST: Segurança da API, Cache e Monitoramento - Alura - 12 Horas
 23/11/2020 - Scrum: Agilidade em seu projeto - Alura - 10 Horas
 13/11/2020 - Spring Boot API REST: Construa uma API - Alura - 8 Horas
@@ -13,4 +14,3 @@
 07/08/2019 - Git e Github na Vida Real - Udemy - Willian Justen de Vasconcellos - 4 Horas
 02/07/2019 - Git e Github para iniciantes - Udemy - Willian Justen de Vasconcellos - 2 Horas
 26/06/2019 - JavaScript Masterclass Online - Agile Code - Rodrigo Branas - 40 Horas
-
