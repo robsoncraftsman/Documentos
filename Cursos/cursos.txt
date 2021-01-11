@@ -1,3 +1,4 @@
+11/01/2021 - Java e Domain Driven Design: Apresentando os Conceitos - Alura - 8 Horas
 07/01/2021 - Solid com Java: Princípios da Programação Orientada a Objetos - Alura - 8 Horas
 06/01/2021 - Spring Boot e Teste: Profiles, Testes e Deploy - Alura - 8 Horas
 05/01/2021 - Spring Boot API REST: Segurança da API, Cache e Monitoramento - Alura - 12 Horas
