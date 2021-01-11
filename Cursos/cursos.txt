@@ -1,4 +1,5 @@
 07/01/2021 - Solid com Java: Princípios da Programação Orientada a Objetos - Alura - 8 Horas
+06/01/2021 - Spring Boot e Teste: Profiles, Testes e Deploy - Alura - 8 Horas
 05/01/2021 - Spring Boot API REST: Segurança da API, Cache e Monitoramento - Alura - 12 Horas
 23/11/2020 - Scrum: Agilidade em seu projeto - Alura - 10 Horas
 13/11/2020 - Spring Boot API REST: Construa uma API - Alura - 8 Horas

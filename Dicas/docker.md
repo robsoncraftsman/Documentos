@@ -107,7 +107,7 @@ https://docs.docker.com/engine/install/ubuntu/
 
 - Gerar uma nova imagem a partir da pasta corrente (onde está o arquivo Dockerfile):
 
-`docker image build -t {image_name} .`
+`docker image build -t {image_name}:{image_version} .`
 
 ### Subir imagem para o DockerHub
 
