@@ -87,6 +87,9 @@ git checkout "nome_do_arquivo"
 //Desfazer uma alteração em um arquivo após o "staged"
 git reset HEAD "home_do_arquivo"
 
+//Desfazer todas as alterações locais e pegar os commits remotos
+git reset --hard origin/main
+
 //Revertendo alterações sem perder o commit (gera um novo commit com o revert)
 git revert <hash_alvo>
 
