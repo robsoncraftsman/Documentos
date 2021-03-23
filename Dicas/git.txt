@@ -116,8 +116,8 @@ git push
 //Pegando as alterações (após feito o link com -u)
 git pull
 
-//Pegando as alterações e fazendo rebase qdo houver alterações no Github
-git pull origin main --rebase
+//Pegando as alterações e fazendo rebase qdo houver alterações no repositório remoto
+git pull --rebase
 
 //Baixar um novo repositório na máquina
 git clone <url_repositório_remoto> <pasta_local>
@@ -227,7 +227,7 @@ git commit --fixup <hash_do_commit>
 
 //Corrigir último commit (arquivos ou mensagem)
 //(IMPORTANTE: Se tiver alterações staged, substitui as alterações também)
-git commit --amend -m "Message"
+git commit -m "Message" --amend
 
 //Excluir o último commit, mantendo as alterações locais
 git reset HEAD^
