@@ -138,11 +138,11 @@ git checkout <nome_branch>
 //Excluir um branch
 git branch -D <nome_branch>
 
+//Enviar uma branch para servidor
+git push origin <nome_branch>
+
 //Excluir uma branch remota
 git push origin --delete <nome_branch>
-
-//OU 
-git push origin :<nome_branch>
 
 //Fazer merge da branch para a main
 git checkout main
