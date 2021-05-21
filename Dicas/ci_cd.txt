@@ -1,0 +1,18 @@
+Continuous Integration:
+1) As alterações devem ser integradas frequentemente na branch principal ou de desenvolvimento. Várias vezes ao dia.
+2) O produto deve conter testes automatizados que trazem confiança que o Software está correto quando o Build é realizado.
+3) Quando o build falha, o software deve ser corrigido imediatamente e o build voltar passar.
+
+Continuous Integration faz parte da prática de Continuous Delivery.
+
+O objetivo é integrar o código de forma mais frequente possível para:
+- Minimizar os conflitos ao realizar um merge.
+- Se for introduzido um bug, que ele seja detectado o mais rápido possível.
+- Que o software esteja sempre pronto para um deploy caso necessário.
+
+Integração contínua exige build e testes automatizados e que estes sejam realizados de forma frequente.
+
+Continuous Delivery consiste em deixar o software pronto para o deploy a cada commit.
+
+Continuous Deploy é um passo a mais que o Continuous Delivery. 
+Neste caso, o software é efetivamente colocado em produção a cada commit.
