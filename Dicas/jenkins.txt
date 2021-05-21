@@ -1,0 +1,29 @@
+1) Iniciar um container com o Jenkins 
+
+docker container run -d \
+    -p 8900:8080 \
+    -v /mnt/c/Jenkins/Data:/var/jenkins_home \
+    --name jenkins \
+    jenkins/jenkins:lts
+	
+2) Pegar a senha para configuração do jenkins
+
+docker container exec jenkins sh -c "cat /var/jenkins_home/secrets/initialAdminPassword"
+
+3) Configuração:
+- Instalar plugins sugeridos
+- Configurar usuário/senha de administração
+- Configurar JDK
+- Configurar Maven (instalar o maven com apt-get update && apt-get install maven)
+- Configurar variável de ambiente JAVA_TOOL_OPTIONS -Dfile.encoding=UTF-8
+- Instalar o plugin AnsiColor para ajustar os logs (https://plugins.jenkins.io/ansicolor/)
+- Configurar os Jobs para usar o plugin AnsiColor (Build Environment > Color ANSI Console Output > xterm)
+
+==========================================================================================
+
+Outros:
+
+docker container logs jenkins
+
+docker exec -u root -it jenkins bash
+	

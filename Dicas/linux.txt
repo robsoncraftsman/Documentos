@@ -1,0 +1,86 @@
+======================================================================
+Memória Livre:
+======================================================================
+> free -h --si
+
+======================================================================
+Listar os diretórios que ocupam mais espaço:
+======================================================================
+> du -h | sort -h -r | head -n 25
+
+======================================================================
+Conectar via SSH em um servidor AWS
+======================================================================
+- Baixar a chave da AWS
+- Dar permissão de leitura apenas para o dono do arquivo:
+chmod 400 LightsailDefaultKey-us-east-2.pem
+
+ssh -i <chave.pem> <usuario>@<ip>
+Ex: ssh -i LightsailDefaultKey-us-east-2.pem bitnami@3.16.175.114
+
+======================================================================
+Criar um script
+======================================================================
+> vi script.sh
+-------------------------
+#!/bin/bash
+<comando a ser executado>
+-------------------------
+Dar permissão:
+> chmod u+x script.sh
+
+Para executar:
+> ./script.sh
+
+======================================================================
+Montar um disco
+======================================================================
+# Mostrar todos os discos:
+> df -h
+
+# Listar os discos e as partições:
+> sudo fdisk -l
+
+# Criar uma partição no disco:
+> sudo fdisk <disk>
+Ex: sudo fdisk /dev/xvdf
+* Comandos fdisk:
+  * p = mostrar dados da partição
+  * n = nova partição
+  * w = gravar a partição
+
+# Formatar o disco:
+> sudo mkfs.ext4 <device>
+Ex: sudo mkfs.ext4 /dev/xvdf1
+
+# Criar um diretório no disco:
+> sudo mkdir /mnt/<diretorio>
+Ex: sudo mkdir /mnt/disco-externo
+
+# Dar permissão no diretório para o usuário da máquina
+> sudo chown <usuario>:<grupo> <diretorio>
+Ex: sudo chown bitnami:bitnami /mnt/disco-externo
+
+# Montar o disco:
+> sudo mount <device> <diretorio>
+Ex: sudo mount /dev/xvdf1 /mnt/disco-externo
+
+# Configurar o sistema para montar o disco na inicialização:
+IMPORTANTE: Se houver um erro de digitação no arquivo fstab a imagem não irá mais fazer boot
+
+> sudo cp /etc/fstab /etc/fstab.bkp
+> sudo vi /etc/fstab
+Adicionar as informações do novo disco:
+/dev/xvdf1 /mnt/disco-externo ext4 defaults 0 0
+Desmontar novamente o novo disco:
+> sudo umount /mnt/disco-externo
+> df -h
+Refazer as montagens conforme o boot para verificar se está tudo OK:
+> sudo mount -a
+> df -h
+Conferir se deu certo a montagem
+
+======================================================================
+Reiniciar uma máquina
+======================================================================
+sudo reboot
