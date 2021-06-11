@@ -38,7 +38,6 @@ Plugins:
 - Bracket Pair Colorizer 2
 - Color Highlight
 - Debugger for Chrome
-- Docker
 - ESLint
 - GitHub Pull Requests and Issues
 - GitLens
@@ -48,7 +47,19 @@ Plugins:
 - npm Intellisense
 - Prettier
 - Remote - Containers
-- TEST Client
+- REST Client
 - Shortcut Menu Bar
 - StandardJS
 - vscode-icons
+- Visual Studio IntelliCode
+- Path Intellisense
+- ES7 React/Redux/GraphQL/React-Native snippets
+- Remote - SSH
+- Auto Close Tag
+- Auto Rename Tag
+- Code Spell Checker
+- Brazilian Portuguese - Code Spell Checker
+- Import Cost
+- Simple React Snippets
+- Docker*
+- SonarLint*
