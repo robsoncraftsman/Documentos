@@ -4,6 +4,15 @@ nvm install stable
 //Listar versões locais node
 nvm ls
 
+//Definir uma determinada versão com a versão padrão do node
+nvm alias default <versão>
+
+//Usar uma versão do node
+nvm use <versão>
+
+//Listar os releases disponíveis de uma determinada versão
+nvm ls-remote | grep -i 'v<versão>'
+
 //Verificar versão atual do node
 node -v
 

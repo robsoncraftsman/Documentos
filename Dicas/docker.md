@@ -184,7 +184,7 @@ docker run \
  -e POSTGRES_DB=db \
  -p 5432:5432 \
  -d \
- postgres:12.4
+ postgres:13.4
 ```
 ```
 docker run \
@@ -197,7 +197,7 @@ docker run \
 
 - Acessar o PSQL dentro da imagem:
 
-`docker exec {container_name|id} psql -U admin -d db`
+`docker exec -it {container_name|id} psql -U admin -d db`
 
 - Rodar comandos dentro do database:
 

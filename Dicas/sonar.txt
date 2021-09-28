@@ -2,7 +2,18 @@
 
 docker run -d --name sonarqube -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true -p 9000:9000 sonarqube:latest
 
-2) Instalar Sonar Qube (Modo Server - Banco embutido para teste)
+2) Instalar o Postgres:
+
+docker container run -d --name postgres_sonarqube \
+ --stop-timeout 300 \
+ -e POSTGRES_USER=sonarqube \
+ -e POSTGRES_PASSWORD=P@ssw0rd \
+ -e POSTGRES_DB=sonarqube \
+ -p 5435:5432 \
+ -v postgres_sonarqube:/var/lib/postgresql/data \
+ postgres:13.3
+
+2) Instalar Sonar Qube (Modo Server)
 https://github.com/docker-library/docs/tree/master/sonarqube
 
 sysctl -w vm.max_map_count=262144
@@ -14,9 +25,14 @@ docker volume create --name sonarqube_data
 docker volume create --name sonarqube_logs
 docker volume create --name sonarqube_extensions
 
-docker run -d --name sonarqube \
+docker container run -d --name sonarqube \
+	--stop-timeout 3600
+    --link postgres_sonarqube:postgres_sonarqube
     -p 9000:9000 \
+	-e SONAR_JDBC_URL=jdbc:postgresql://postgres_sonarqube:5435/sonarqube
+    -e SONAR_JDBC_USERNAME=sonarqube
+    -e SONAR_JDBC_PASSWORD=wmwcli123
     -v sonarqube_data:/opt/sonarqube/data \
     -v sonarqube_extensions:/opt/sonarqube/extensions \
     -v sonarqube_logs:/opt/sonarqube/logs \
-    sonarqube:8.9.0-community
+    sonarqube:8.9.1-community

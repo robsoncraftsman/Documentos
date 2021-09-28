@@ -2,9 +2,9 @@
 
 docker container run -d \
     -p 8900:8080 \
-    -v /mnt/c/Jenkins/Data:/var/jenkins_home \
+    -v jenkins:/var/jenkins_home \
     --name jenkins \
-    jenkins/jenkins:lts
+    jenkins/jenkins:lts-jdk11
 	
 2) Pegar a senha para configuração do jenkins
 
