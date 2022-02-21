@@ -20,7 +20,7 @@ https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-
 followTags = true
 [alias]
 la = !git --no-pager log  --pretty=format:'%C(yellow)%h%d %C(cyan)- %cn - %cr - %C(green)%s'
-l = !git la -n 5
+l = !git la -n 10
 s = !git status -b -s
 a = !git add . && git s
 c = !git commit -m
