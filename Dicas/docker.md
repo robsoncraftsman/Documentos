@@ -241,7 +241,7 @@ docker container run --name {container_name} -p 3306:3306 -e MYSQL_ROOT_PASSWORD
 
 ```
 # docker exec -it {container_name|id} bash
-# mysql -uroot -p
+# mysql -uroot -p <database>
 ```
 
 
